@@ -68,6 +68,23 @@
 | create  | name, location, startAt, description, subTournaments (Array), chairUmpirePhone (String)  |    | 创建赛事，包括子赛事 | type: Boolean |
 | get  |   |    | 获取所有赛事及子赛事 | type: Array |
 
+### Match
+
+| name  | type  |  explanation  | required | unique  |
+|---|---|---|---|---|
+|  id | String  | 主键  |  y | y  |
+|  umpire | relates to User  | 裁判  |  y | n  |
+|  players | relates to User  | 单打双方选手  |  y | n  |
+|  doubles | relates to Doubles  | 双打双方选手  |  y | n  |
+|  bestOf | Number  | 最多打的局数  |  y | n  |
+|  scoringSys | Number  | 得分制, 21分，11分，15分  |  y | n  |
+|  discipline | String  | 项目，ms男单等  |  y | n  |
+|  subTournament | relates to subTournament  | 关联到子赛事  |  y | n  |
+|  scores | Array  | 双方比分（大比分）  |  y | n  |
+|  duration | Number  | 持续时间(秒)  |  y | n  |
+|  winner | relates to User  | 胜者  |  y | n  |
+
+
 ### SubTournament
 
 属性
